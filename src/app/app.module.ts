@@ -8,14 +8,16 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './component/home/home.component'
 import { ErrorComponent } from './component/4o4/error.component'
 import { LoginComponent } from './component/login/login.component'
+import { LoadingComponent } from './component/loading/loading.component'
 
 import { CanActivateService } from './service/can-activate.service'
 import { LoginService } from './service/login.service'
 import { InterceptorService } from './service/interceptor.service'
 import { HttpService } from './service/http.service'
+import { LoadingService } from './service/loading.service'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ErrorComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, ErrorComponent, LoginComponent, LoadingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     CanActivateService,
@@ -25,7 +27,8 @@ import { HttpService } from './service/http.service'
       useClass: InterceptorService,
       multi: true
     },
-    HttpService
+    HttpService,
+    LoadingService
   ],
   bootstrap: [AppComponent]
 })

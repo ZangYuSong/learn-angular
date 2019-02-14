@@ -10,7 +10,7 @@ import { LoginService } from '../../service/login.service'
 export class HomeComponent implements OnInit {
   constructor(private login: LoginService) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   logout() {
     this.login.logout()

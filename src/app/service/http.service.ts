@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { Observable, of, throwError } from 'rxjs'
-import { catchError, switchMap } from 'rxjs/operators'
-import { isLoginApi } from '../api/api'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
+import { catchError, map } from 'rxjs/operators'
+import { LoadingService } from './loading.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private loading: LoadingService) {}
 
   processing(http: Observable<any>): Observable<any> {
+    this.loading.next(true)
     return http.pipe(
-      // switchMap(data => {
-      //   if (data.status !== 1) {
-      //     return throwError(data)
-      //   }
-      //   return of(data.data)
-      // }),
+      map(data => {
+        this.loading.next(false)
+        return data
+      }),
       catchError((e: any) => {
         alert(e.message)
         return e
