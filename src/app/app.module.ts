@@ -12,6 +12,7 @@ import { LoginComponent } from './component/login/login.component'
 import { CanActivateService } from './service/can-activate.service'
 import { LoginService } from './service/login.service'
 import { InterceptorService } from './service/interceptor.service'
+import { HttpService } from './service/http.service'
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ErrorComponent, LoginComponent],
@@ -23,7 +24,8 @@ import { InterceptorService } from './service/interceptor.service'
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true
-    }
+    },
+    HttpService
   ],
   bootstrap: [AppComponent]
 })

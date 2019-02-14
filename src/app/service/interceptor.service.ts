@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http'
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { catchError } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })

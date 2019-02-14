@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { Observable } from 'rxjs'
+import { HttpService } from './http.service'
 import { loginApi, isLoginApi, logoutApi } from '../api/api'
-import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpService) {}
 
   isLogin(): Observable<any> {
     return this.http.get(isLoginApi)
@@ -25,17 +24,12 @@ export class LoginService {
   }
 
   logout() {
-    this.http.get(logoutApi).subscribe(
-      (data: any) => {
-        if (data.status === 1) {
-          this.router.navigate(['login'])
-        } else {
-          alert(data.message)
-        }
-      },
-      (e: any) => {
-        alert(e.message)
+    this.http.get(logoutApi).subscribe((data: any) => {
+      if (data.status === 1) {
+        this.router.navigate(['login'])
+      } else {
+        alert(data.message)
       }
-    )
+    })
   }
 }
