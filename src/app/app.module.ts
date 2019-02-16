@@ -9,15 +9,18 @@ import { HomeComponent } from './component/home/home.component'
 import { ErrorComponent } from './component/4o4/error.component'
 import { LoginComponent } from './component/login/login.component'
 import { LoadingComponent } from './component/loading/loading.component'
+import { LayoutComponent } from './component/layout/layout.component'
 
 import { CanActivateService } from './service/can-activate.service'
 import { LoginService } from './service/login.service'
 import { InterceptorService } from './service/interceptor.service'
 import { HttpService } from './service/http.service'
-import { LoadingService } from './service/loading.service'
+import { LoadingService } from './service/loading.service';
+import { ListComponent } from './component/list/list.component';
+import { DetailComponent } from './component/detail/detail.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ErrorComponent, LoginComponent, LoadingComponent],
+  declarations: [AppComponent, HomeComponent, ErrorComponent, LoginComponent, LoadingComponent, LayoutComponent, ListComponent, DetailComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     CanActivateService,

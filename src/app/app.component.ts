@@ -2,6 +2,6 @@ import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet><app-loading></app-loading>'
+  template: '<app-layout></app-layout>'
 })
 export class AppComponent {}

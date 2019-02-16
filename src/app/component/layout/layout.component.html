@@ -1,0 +1,9 @@
+<div *ngIf="!router.isActive('/login', true) && !router.isActive('/404', true)">
+  <button (click)="logout()">注销登陆</button>
+  <ul>
+    <li><a [routerLink]="['/home']">home</a></li>
+    <li><a [routerLink]="['/list']">list</a></li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
+<app-loading></app-loading>
