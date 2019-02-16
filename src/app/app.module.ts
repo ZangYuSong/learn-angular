@@ -7,6 +7,8 @@ import { AppRoutingModule } from './route/route.module'
 
 import { SpanHighLightDirective } from './directive/span-high-light.directive'
 
+import { PipeTestPipe } from './pipe/pipe-test.pipe'
+
 import { CanActivateService } from './service/can-activate.service'
 import { LoginService } from './service/login.service'
 import { InterceptorService } from './service/interceptor.service'
@@ -40,7 +42,8 @@ import { ChildrenComponent } from './component/parent/children/children.componen
     DetailLeftComponent,
     SpanHighLightDirective,
     ParentComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    PipeTestPipe
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
