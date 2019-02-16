@@ -4,3 +4,5 @@
 <div>密码： <input type="password" [(ngModel)]="password" (keyup.enter)="submitLogin()" /></div>
 
 <button (click)="submitLogin()">登陆</button>
+
+<span [appSpanHighLight]="'red'">测试高亮指令</span>

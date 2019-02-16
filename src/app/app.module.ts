@@ -22,6 +22,8 @@ import { DetailComponent } from './component/detail/detail.component'
 import { DetailRightComponent } from './component/detail/detail-right/detail-right.component'
 import { DetailLeftComponent } from './component/detail/detail-left/detail-left.component'
 
+import { SpanHighLightDirective } from './directive/span-high-light.directive'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { DetailLeftComponent } from './component/detail/detail-left/detail-left.
     ListComponent,
     DetailComponent,
     DetailRightComponent,
-    DetailLeftComponent
+    DetailLeftComponent,
+    SpanHighLightDirective
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
