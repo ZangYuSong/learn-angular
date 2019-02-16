@@ -8,6 +8,7 @@ import { ListComponent } from '../component/list/list.component'
 import { DetailComponent } from '../component/detail/detail.component'
 import { DetailLeftComponent } from '../component/detail/detail-left/detail-left.component'
 import { DetailRightComponent } from '../component/detail/detail-right/detail-right.component'
+import { ParentComponent } from '../component/parent/parent.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'parent', component: ParentComponent, canActivate: [CanActivateService] },
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
   { path: '404', component: ErrorComponent }
 ]

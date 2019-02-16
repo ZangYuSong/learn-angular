@@ -5,6 +5,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './route/route.module'
 
+import { SpanHighLightDirective } from './directive/span-high-light.directive'
+
 import { CanActivateService } from './service/can-activate.service'
 import { LoginService } from './service/login.service'
 import { InterceptorService } from './service/interceptor.service'
@@ -21,8 +23,8 @@ import { ListComponent } from './component/list/list.component'
 import { DetailComponent } from './component/detail/detail.component'
 import { DetailRightComponent } from './component/detail/detail-right/detail-right.component'
 import { DetailLeftComponent } from './component/detail/detail-left/detail-left.component'
-
-import { SpanHighLightDirective } from './directive/span-high-light.directive'
+import { ParentComponent } from './component/parent/parent.component'
+import { ChildrenComponent } from './component/parent/children/children.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SpanHighLightDirective } from './directive/span-high-light.directive'
     DetailComponent,
     DetailRightComponent,
     DetailLeftComponent,
-    SpanHighLightDirective
+    SpanHighLightDirective,
+    ParentComponent,
+    ChildrenComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
