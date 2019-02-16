@@ -6,13 +6,31 @@ import { ErrorComponent } from '../component/4o4/error.component'
 import { LoginComponent } from '../component/login/login.component'
 import { ListComponent } from '../component/list/list.component'
 import { DetailComponent } from '../component/detail/detail.component'
+import { DetailLeftComponent } from '../component/detail/detail-left/detail-left.component'
+import { DetailRightComponent } from '../component/detail/detail-right/detail-right.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [CanActivateService] },
   { path: 'list', component: ListComponent, canActivate: [CanActivateService] },
-  { path: 'detail/:id', component: DetailComponent, canActivate: [CanActivateService] },
+  {
+    path: 'detail/:id',
+    component: DetailComponent,
+    canActivate: [CanActivateService],
+    children: [
+      {
+        path: '',
+        component: DetailLeftComponent,
+        outlet: 'left'
+      },
+      {
+        path: '',
+        component: DetailRightComponent,
+        outlet: 'right'
+      }
+    ]
+  },
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
   { path: '404', component: ErrorComponent }
 ]
