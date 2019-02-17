@@ -5,8 +5,7 @@ import { LoginService } from '../../service/login.service'
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
-  providers: [LoginService]
+  styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
   constructor(private router: Router, private login: LoginService) {}

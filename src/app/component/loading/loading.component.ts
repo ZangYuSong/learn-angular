@@ -4,8 +4,7 @@ import { LoadingService } from '../../service/loading.service'
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.component.html',
-  styleUrls: ['./loading.component.scss'],
-  providers: [LoadingService]
+  styleUrls: ['./loading.component.scss']
 })
 export class LoadingComponent implements OnInit {
   private isShow = false
