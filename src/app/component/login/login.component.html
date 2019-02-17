@@ -1,8 +1,8 @@
 <p>登陆</p>
 
-<div>用户名： <input type="text" [(ngModel)]="username" (keyup.enter)="submitLogin()" /></div>
-<div>密码： <input type="password" [(ngModel)]="password" (keyup.enter)="submitLogin()" /></div>
+<div>{{ 'username' | translate }}：<input type="text" [(ngModel)]="username" (keyup.enter)="submitLogin()" /></div>
+<div>{{ 'password' | translate }}：<input type="password" [(ngModel)]="password" (keyup.enter)="submitLogin()" /></div>
 
-<button (click)="submitLogin()">登陆</button>
+<button (click)="submitLogin()">{{ 'submit' | translate }}</button>
 
 <span [appSpanHighLight]="'red'">测试高亮指令</span>

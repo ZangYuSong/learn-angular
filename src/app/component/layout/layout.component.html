@@ -1,4 +1,6 @@
-<div *ngIf="!router.isActive('/login', true) && !router.isActive('/404', true)">
+<button (click)="resetLocal()">{{ 'switch-local' | translate }}</button>
+<br>
+<div *ngIf="!router.isActive('/login', true) && !router.isActive('/404', true); else elseIf">
   <button (click)="logout()">注销登陆</button>
   <ul>
     <li><a [routerLink]="['/home']">home</a></li>
@@ -6,5 +8,8 @@
     <li><a [routerLink]="['/parent']">parent</a></li>
   </ul>
 </div>
+<ng-template #elseIf>
+  <div>请登陆</div>
+</ng-template>
 <router-outlet></router-outlet>
 <app-loading></app-loading>

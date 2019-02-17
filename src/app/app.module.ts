@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http'
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { AppRoutingModule } from './route/app-routing.module'
 import { AppCommonModule } from './app-common.module'
 import { InterceptorService } from './service/interceptor.service'
@@ -11,7 +13,21 @@ import { LayoutComponent } from './component/layout/layout.component'
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent, LoadingComponent, LayoutComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, AppCommonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AppCommonModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
+        },
+        deps: [HttpClient]
+      }
+    })
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

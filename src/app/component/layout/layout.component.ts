@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { LoginService } from '../../service/login.service'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-layout',
@@ -8,9 +9,26 @@ import { LoginService } from '../../service/login.service'
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  constructor(private router: Router, private login: LoginService) {}
+  private local = 'zh'
 
-  ngOnInit() {}
+  constructor(private router: Router, private login: LoginService, private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.setLoacl()
+  }
+
+  setLoacl() {
+    this.translate.setDefaultLang(this.local)
+  }
+
+  resetLocal() {
+    if (this.local === 'en') {
+      this.local = 'zh'
+    } else {
+      this.local = 'en'
+    }
+    this.setLoacl()
+  }
 
   logout() {
     this.login.logout()
