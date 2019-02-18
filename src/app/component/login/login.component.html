@@ -4,5 +4,7 @@
 <div>{{ 'password' | translate }}：<input type="password" [(ngModel)]="password" (keyup.enter)="submitLogin()" /></div>
 
 <button (click)="submitLogin()">{{ 'submit' | translate }}</button>
-
+<br>
 <span [appSpanHighLight]="'red'">测试高亮指令</span>
+<br>
+<button (click)="test()">测试rxjs 的操作符</button>
