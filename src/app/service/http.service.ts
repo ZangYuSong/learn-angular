@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
-import { catchError, map } from 'rxjs/operators'
+import { Observable, of, throwError } from 'rxjs'
+import { catchError, switchMap } from 'rxjs/operators'
 import { LoadingService } from './loading.service'
+import { NzNotificationService } from 'ng-zorro-antd'
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  constructor(private http: HttpClient, private loading: LoadingService) {}
+  constructor(private http: HttpClient, private loading: LoadingService, private notifition: NzNotificationService) {}
 
   processing(http: Observable<any>): Observable<any> {
     this.loading.next(true)
     return http.pipe(
-      map(data => {
+      switchMap(data => {
         this.loading.next(false)
-        return data
+        if (data.status === 1) {
+          return of(data.data)
+        }
+        return throwError(data)
       }),
       catchError((e: any) => {
-        alert(e.message)
-        return e
+        this.notifition.error('错误', e.message)
+        return throwError(e)
       })
     )
   }

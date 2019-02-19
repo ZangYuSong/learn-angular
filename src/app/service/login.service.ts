@@ -24,12 +24,8 @@ export class LoginService {
   }
 
   logout() {
-    this.http.get(logoutApi).subscribe((data: any) => {
-      if (data.status === 1) {
-        this.router.navigate(['login'])
-      } else {
-        alert(data.message)
-      }
+    this.http.get(logoutApi).subscribe(() => {
+      this.router.navigate(['login'])
     })
   }
 }

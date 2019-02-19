@@ -7,7 +7,7 @@ app.use(
   route.get('/isLogin', (ctx, next) => {
     ctx.response.body = JSON.stringify({
       data: isLogin,
-      status: isLogin ? 1 : 0,
+      status: 1,
       message: isLogin ? '已登陆' : '未登录'
     })
     next()

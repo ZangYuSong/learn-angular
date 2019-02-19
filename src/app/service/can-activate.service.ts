@@ -10,13 +10,13 @@ import { map } from 'rxjs/operators'
 export class CanActivateService implements CanActivate {
   constructor(private router: Router, private login: LoginService) {}
 
-  canActivate(): boolean | Observable<any> {
+  canActivate(): Observable<any> {
     return this.login.isLogin().pipe(
-      map((data: any) => {
-        if (data.status === 0) {
+      map(data => {
+        if (!data) {
           this.router.navigate(['login'])
         }
-        return data.status === 1
+        return data
       })
     )
   }

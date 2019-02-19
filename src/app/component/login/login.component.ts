@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscribeList.push(
       this.login.isLogin().subscribe((data: any) => {
-        if (data.status === 1) {
+        if (data) {
           this.router.navigate(['home'])
         }
       })
@@ -80,12 +80,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     if (status === 'VALID') {
       this.subscribeList.push(
-        this.login.login(value.username, value.password).subscribe((data: any) => {
-          if (data.status === 1) {
-            this.router.navigate(['home'])
-          } else {
-            alert(data.message)
-          }
+        this.login.login(value.username, value.password).subscribe(() => {
+          this.router.navigate(['home'])
         })
       )
     }
