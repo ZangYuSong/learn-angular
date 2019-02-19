@@ -1,15 +1,21 @@
-<button (click)="resetLocal()">{{ 'switch-local' | translate }}</button>
-<br />
-<div *ngIf="!router.isActive('/login', true) && !router.isActive('/404', true); else elseIf">
-  <button (click)="logout()">注销登陆</button>
-  <ul>
-    <li><a [routerLink]="['/home']">home</a></li>
-    <li><a [routerLink]="['/list']">list</a></li>
-    <li><a [routerLink]="['/parent']">parent</a></li>
-  </ul>
-</div>
-<ng-template #elseIf>
-  <div>请登陆</div>
-</ng-template>
-<router-outlet></router-outlet>
+<nz-layout class="ml-layout">
+  <nz-header class="ml-header">
+    <ul *ngIf="isShow()" nz-menu [nzMode]="'horizontal'" nzTheme="dark">
+      <li nz-menu-item [nzSelected]="isSelected('/home')"><a [routerLink]="['/home']">首页</a></li>
+      <li nz-menu-item [nzSelected]="isSelected('/list')"><a [routerLink]="['/list']">列表</a></li>
+      <li nz-menu-item [nzSelected]="isSelected('/parent')"><a [routerLink]="['/parent']">父子组件</a></li>
+    </ul>
+    <div class="header-operation">
+      <button nz-button [nzType]="'primary'" [nzSize]="'small'" (click)="resetLocal()">
+        {{ 'switch-local' | translate }}
+      </button>
+      <button *ngIf="isShow()" nz-button [nzType]="'primary'" [nzSize]="'small'" class="ml-15" (click)="logout()">
+        注销登陆
+      </button>
+    </div>
+  </nz-header>
+  <nz-content class="ml-content">
+    <router-outlet></router-outlet>
+  </nz-content>
+</nz-layout>
 <app-loading></app-loading>

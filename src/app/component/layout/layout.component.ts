@@ -44,4 +44,12 @@ export class LayoutComponent implements OnInit {
   logout() {
     this.login.logout()
   }
+
+  isShow() {
+    return !this.router.isActive('/login', true) && !this.router.isActive('/404', true)
+  }
+
+  isSelected(path) {
+    return this.router.isActive(path, true)
+  }
 }
