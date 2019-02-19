@@ -6,12 +6,12 @@ import { TranslateService } from '@ngx-translate/core'
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.less']
 })
 export class LayoutComponent implements OnInit {
   private local = 'zh'
 
-  constructor(private router: Router, private login: LoginService, private translate: TranslateService) {}
+  constructor(public router: Router, private login: LoginService, private translate: TranslateService) {}
 
   ngOnInit() {
     this.setLoacl()

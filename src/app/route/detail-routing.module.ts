@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { AppCommonModule } from '../app-common.module'
+import { AppCommonModule } from '../common/app-common.module'
 import { CanActivateService } from '../service/can-activate.service'
 import { DetailComponent } from '../component/detail/detail.component'
 import { DetailLeftComponent } from '../component/detail/detail-left/detail-left.component'

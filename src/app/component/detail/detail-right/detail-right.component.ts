@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'app-detail-right',
   templateUrl: './detail-right.component.html',
-  styleUrls: ['./detail-right.component.scss']
+  styleUrls: ['./detail-right.component.less']
 })
 export class DetailRightComponent
   implements

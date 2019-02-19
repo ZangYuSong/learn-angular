@@ -4,10 +4,10 @@ import { LoadingService } from '../../service/loading.service'
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.component.html',
-  styleUrls: ['./loading.component.scss']
+  styleUrls: ['./loading.component.less']
 })
 export class LoadingComponent implements OnInit {
-  private isShow = false
+  public isShow = false
 
   constructor(private loading: LoadingService) {}
 

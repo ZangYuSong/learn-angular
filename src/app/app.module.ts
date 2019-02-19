@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { AppRoutingModule } from './route/app-routing.module'
-import { AppCommonModule } from './app-common.module'
+import { AppCommonModule } from './common/app-common.module'
 import { InterceptorService } from './service/interceptor.service'
 import { AppComponent } from './app.component'
 import { ErrorComponent } from './component/4o4/error.component'

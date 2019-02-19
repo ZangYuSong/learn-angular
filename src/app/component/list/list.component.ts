@@ -4,10 +4,10 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.less']
 })
 export class ListComponent implements OnInit {
-  private list = [
+  public list = [
     {
       id: 2,
       label: 'detail 2'

@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'app-detail-left',
   templateUrl: './detail-left.component.html',
-  styleUrls: ['./detail-left.component.scss']
+  styleUrls: ['./detail-left.component.less']
 })
 export class DetailLeftComponent
   implements
