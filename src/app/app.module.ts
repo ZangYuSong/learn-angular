@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core'
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
@@ -18,6 +19,7 @@ import { LayoutComponent } from './component/layout/layout.component'
     AppRoutingModule,
     HttpClientModule,
     AppCommonModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

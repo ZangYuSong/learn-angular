@@ -37,6 +37,7 @@ import {
   publish,
   multicast
 } from 'rxjs/operators'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -44,11 +45,10 @@ import {
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  public username = ''
-  public password = ''
-  public subscribeList: Array<Subscription> = []
+  private subscribeList: Array<Subscription> = []
+  validateForm: FormGroup
 
-  constructor(private router: Router, private login: LoginService) {}
+  constructor(private router: Router, private login: LoginService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.subscribeList.push(
@@ -58,13 +58,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
       })
     )
-    // fromEvent(document, 'click')
-    //   .pipe(
-    //     switchMap(() => {
-    //       return interval(1000).pipe(take(3))
-    //     })
-    //   )
-    //   .subscribe(data => console.log(data))
+    this.validateForm = this.formBuilder.group({
+      username: [null, [Validators.required]],
+      password: [null, [Validators.required]]
+    })
   }
 
   ngOnDestroy(): void {
@@ -73,20 +70,25 @@ export class LoginComponent implements OnInit, OnDestroy {
     })
   }
 
-  submitLogin(): void {
-    if (!this.username || !this.password) {
-      alert('请输入完成信息')
-      return
+  submitForm() {
+    const { controls, status, value } = this.validateForm
+    for (const key in controls) {
+      if (controls.hasOwnProperty(key)) {
+        controls[key].markAsDirty()
+        controls[key].updateValueAndValidity()
+      }
     }
-    this.subscribeList.push(
-      this.login.login(this.username, this.password).subscribe((data: any) => {
-        if (data.status === 1) {
-          this.router.navigate(['home'])
-        } else {
-          alert(data.message)
-        }
-      })
-    )
+    if (status === 'VALID') {
+      this.subscribeList.push(
+        this.login.login(value.username, value.password).subscribe((data: any) => {
+          if (data.status === 1) {
+            this.router.navigate(['home'])
+          } else {
+            alert(data.message)
+          }
+        })
+      )
+    }
   }
 
   test() {

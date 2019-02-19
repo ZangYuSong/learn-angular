@@ -1,5 +1,5 @@
 <button (click)="resetLocal()">{{ 'switch-local' | translate }}</button>
-<br>
+<br />
 <div *ngIf="!router.isActive('/login', true) && !router.isActive('/404', true); else elseIf">
   <button (click)="logout()">注销登陆</button>
   <ul>

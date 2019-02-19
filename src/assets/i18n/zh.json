@@ -2,5 +2,7 @@
   "username": "用户名",
   "password": "密码",
   "submit": "登陆",
-  "switch-local": "English"
+  "switch-local": "English",
+  "username-placeholder": "请输入用户名！",
+  "password-placeholder": "请输入密码！"
 }

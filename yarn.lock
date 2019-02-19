@@ -107,6 +107,15 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@^7.0.0":
+  version "7.3.2"
+  resolved "http://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-7.3.2.tgz#33f525051d71e2525d29b2aa798c817334973a7b"
+  integrity sha1-M/UlBR1x4lJdKbKqeYyBczSXOns=
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~7.3.1":
   version "7.3.1"
   resolved "http://registry.npm.taobao.org/@angular/cli/download/@angular/cli-7.3.1.tgz#a18acdec84deb03a1fae79cae415bbc8f9c87ffa"
@@ -195,6 +204,14 @@
   resolved "http://registry.npm.taobao.org/@angular/router/download/@angular/router-7.2.4.tgz#83f1997c2a4e6acda93b991b8d7f3dad2b3f91f0"
   integrity sha1-g/GZfCpOas2pO5kbjX89rSs/kfA=
   dependencies:
+    tslib "^1.9.0"
+
+"@ant-design/icons-angular@2.0.0-beta.1":
+  version "2.0.0-beta.1"
+  resolved "http://registry.npm.taobao.org/@ant-design/icons-angular/download/@ant-design/icons-angular-2.0.0-beta.1.tgz#ad6ae384e126a60217040b3b44224964ed21a7b5"
+  integrity sha1-rWrjhOEmpgIXBAs7RCJJZO0hp7U=
+  dependencies:
+    ant-design-palettes "^1.1.3"
     tslib "^1.9.0"
 
 "@babel/code-frame@^7.0.0":
@@ -683,6 +700,13 @@ ansi-styles@^3.2.1:
   integrity sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=
   dependencies:
     color-convert "^1.9.0"
+
+ant-design-palettes@^1.1.3:
+  version "1.1.3"
+  resolved "http://registry.npm.taobao.org/ant-design-palettes/download/ant-design-palettes-1.1.3.tgz#84119b1a4d86363adc52a38d587e65336a0a27dd"
+  integrity sha1-hBGbGk2GNjrcUqONWH5lM2oKJ90=
+  dependencies:
+    tinycolor2 "^1.4.1"
 
 any-promise@^1.1.0:
   version "1.3.0"
@@ -1982,7 +2006,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-date-fns@^1.23.0:
+date-fns@^1.23.0, date-fns@^1.29.0:
   version "1.30.1"
   resolved "http://registry.npm.taobao.org/date-fns/download/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha1-LnG/CxGRU9u0zE6I2epaz7UNwFw=
@@ -3088,6 +3112,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2:
   version "4.1.15"
   resolved "http://registry.npm.taobao.org/graceful-fs/download/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha1-/7cD4QZuig7qpMi4C6klPu77+wA=
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "http://registry.npm.taobao.org/hammerjs/download/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+  integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
 
 handle-thing@^2.0.0:
   version "2.0.0"
@@ -4791,6 +4820,16 @@ neo-async@^2.5.0:
   resolved "http://registry.npm.taobao.org/neo-async/download/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha1-udFeTXHGdikIZUtRg+04t1M0CDU=
 
+ng-zorro-antd@^7.0.0-rc.3:
+  version "7.0.0-rc.3"
+  resolved "http://registry.npm.taobao.org/ng-zorro-antd/download/ng-zorro-antd-7.0.0-rc.3.tgz#02c9806524ab8b1f6ac0111519a9406b89730a3b"
+  integrity sha1-AsmAZSSrix9qwBEVGalAa4lzCjs=
+  dependencies:
+    "@angular/cdk" "^7.0.0"
+    "@ant-design/icons-angular" "2.0.0-beta.1"
+    date-fns "^1.29.0"
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "http://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -5321,6 +5360,11 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/parse5/download/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha1-bXhlbj2o14tOwLkG98CO8d/j9gg=
+
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "http://registry.npm.taobao.org/parse5/download/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
+  integrity sha1-xZNByXI/QUxFKXVWTHwApo1YrNI=
 
 parseqs@0.0.5:
   version "0.0.5"
@@ -6964,6 +7008,11 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "http://registry.npm.taobao.org/tinycolor2/download/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+  integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
+
 tmp@0.0.30:
   version "0.0.30"
   resolved "http://registry.npm.taobao.org/tmp/download/tmp-0.0.30.tgz#72419d4a8be7d6ce75148fd8b324e593a711c2ed"
@@ -7072,7 +7121,7 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "http://registry.npm.taobao.org/tslib/download/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha1-1+TdeSRdhUKMTX5IIqeZF5VMooY=

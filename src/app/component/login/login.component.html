@@ -1,10 +1,31 @@
-<p>登陆</p>
-
-<div>{{ 'username' | translate }}：<input type="text" [(ngModel)]="username" (keyup.enter)="submitLogin()" /></div>
-<div>{{ 'password' | translate }}：<input type="password" [(ngModel)]="password" (keyup.enter)="submitLogin()" /></div>
-
-<button (click)="submitLogin()">{{ 'submit' | translate }}</button>
-<br>
-<span [appSpanHighLight]="'red'">测试高亮指令</span>
-<br>
-<button (click)="test()">测试rxjs 的操作符</button>
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired nzFor="username">{{ 'username' | translate }}</nz-form-label>
+    <nz-form-control [nzSpan]="16" nzHasFeedback>
+      <nz-input-group [nzPrefix]="prefixUser">
+        <input type="text" nz-input formControlName="username" placeholder="{{ 'username-placeholder' | translate }}" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired nzFor="password">{{ 'password' | translate }}</nz-form-label>
+    <nz-form-control [nzSpan]="16" nzHasFeedback>
+      <nz-input-group [nzPrefix]="prefixLock">
+        <input
+          type="password"
+          nz-input
+          formControlName="password"
+          placeholder="{{ 'password-placeholder' | translate }}"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzOffset]="8">
+      <button nz-button [nzType]="'primary'">{{ 'submit' | translate }}</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+<ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>
+<!-- <button nz-button nzType="primary" (click)="test()">测试rxjs 的操作符</button> -->
