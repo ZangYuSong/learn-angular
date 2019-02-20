@@ -1,5 +1,15 @@
-<div class="container">
-  <div>parent 输入 <input type="text" [(ngModel)]="input" /></div>
-  <div>childern 的输入：{{ childrenValue }}</div>
-</div>
-<app-children [parentValue]="input" (childrenValue)="childrenValueFn($event)"></app-children>
+<form nz-form class="container" autocomplete="off">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8">{{ 'parent-input' | translate }}</nz-form-label>
+    <nz-form-control [nzSpan]="16">
+      <input nz-input type="text" [(ngModel)]="parentInput" name="parentInput" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8">{{ 'childern-input' | translate }}</nz-form-label>
+    <nz-form-control [nzSpan]="16">
+      <textarea rows="4" nz-input readonly [(ngModel)]="childernInput" name="childernInput"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<app-children [parentInput]="parentInput" (childrenValue)="childrenValueFn($event)"></app-children>

@@ -6,9 +6,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
   styleUrls: ['./children.component.less']
 })
 export class ChildrenComponent implements OnInit {
-  public input: string
+  childernInput: string
 
-  @Input() parentValue: string
+  @Input() parentInput: string
 
   @Output() childrenValue = new EventEmitter<string>()
 

@@ -4,5 +4,7 @@
   "submit": "Log In",
   "switch-local": "中文",
   "username-placeholder": "Please input your username!",
-  "password-placeholder": "Please input your Password!"
+  "password-placeholder": "Please input your Password!",
+  "parent-input": "Parent input",
+  "childern-input": "Childern input"
 }

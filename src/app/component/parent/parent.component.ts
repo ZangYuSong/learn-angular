@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./parent.component.less']
 })
 export class ParentComponent implements OnInit {
-  public input: string
-  public childrenValue: string
+  parentInput: string
+  childernInput: string
 
   constructor() {}
 
   ngOnInit() {}
 
   childrenValueFn(event: string) {
-    this.childrenValue = event
+    this.childernInput = event
   }
 }

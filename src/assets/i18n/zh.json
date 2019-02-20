@@ -4,5 +4,7 @@
   "submit": "登陆",
   "switch-local": "English",
   "username-placeholder": "请输入用户名！",
-  "password-placeholder": "请输入密码！"
+  "password-placeholder": "请输入密码！",
+  "parent-input": "父组件的输入",
+  "childern-input": "子组件的输入"
 }

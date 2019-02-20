@@ -1,4 +1,4 @@
-<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+<form nz-form [formGroup]="validateForm" class="login-form" autocomplete="off" (ngSubmit)="submitForm()">
   <nz-form-item>
     <nz-form-label [nzSpan]="8" nzRequired nzFor="username">{{ 'username' | translate }}</nz-form-label>
     <nz-form-control [nzSpan]="16" nzHasFeedback>
