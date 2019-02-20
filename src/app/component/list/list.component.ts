@@ -9,6 +9,11 @@ import { Router } from '@angular/router'
 export class ListComponent implements OnInit {
   public list = [
     {
+      id: 1,
+      label: 'detail 1',
+      type: 'button'
+    },
+    {
       id: 2,
       label: 'detail 2'
     },
@@ -19,6 +24,11 @@ export class ListComponent implements OnInit {
     {
       id: 4,
       label: 'detail 4'
+    },
+    {
+      id: 5,
+      label: 'detail 5',
+      params: { test: 'test' }
     }
   ]
 
@@ -28,9 +38,5 @@ export class ListComponent implements OnInit {
 
   goto(id) {
     this.router.navigate(['/detail/' + id])
-  }
-
-  trackByFn(index, item) {
-    return item.id
   }
 }

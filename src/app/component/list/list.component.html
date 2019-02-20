@@ -1,9 +1,18 @@
-<div>
-  <a [routerLink]="['/detail/1']">detail 1</a>
-</div>
-<div *ngFor="let item of list; index as i; trackBy: trackByFn">
-  <button (click)="goto(item.id)">{{ item.label }} {{ i }}</button>
-</div>
-<div>
-  <a [routerLink]="['/detail/5', { name: 'test' }]">detail 5</a>
-</div>
+<nz-list [nzDataSource]="list" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" nzBordered>
+  <ng-template #item let-item>
+    <nz-list-item>
+      <button
+        *ngIf="item.type === 'button'; else elseIf"
+        nz-button
+        [nzType]="'primary'"
+        [nzSize]="'small'"
+        (click)="goto(item.id)"
+      >
+        {{ item.label }}
+      </button>
+      <ng-template #elseIf>
+        <a [routerLink]="['/detail/' + item.id, item.params ? item.params : {}]">{{ item.label }}</a>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
