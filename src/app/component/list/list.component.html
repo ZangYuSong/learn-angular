@@ -11,7 +11,9 @@
         {{ item.label }}
       </button>
       <ng-template #elseIf>
-        <a [routerLink]="['/detail/' + item.id, item.params ? item.params : {}]">{{ item.label }}</a>
+        <a [routerLink]="['/detail/' + item.id]" [queryParams]="item.params ? item.params : {}" fragment="aaa">
+          {{ item.label }}
+        </a>
       </ng-template>
     </nz-list-item>
   </ng-template>
